@@ -43,6 +43,7 @@ public class NewsController {
     @PutMapping("{id}")
     public News updateDocument(@PathVariable("id") News news,
                                @RequestBody News updatedNews) {
+        news.setDate(LocalDateTime.now());
         BeanUtils.copyProperties(updatedNews, news, "id");
         return newsRepo.save(news);
     }
