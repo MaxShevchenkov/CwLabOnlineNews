@@ -31,7 +31,7 @@ public class News {
     @Type(type = "org.hibernate.type.TextType")
     String body;
     @Column
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     LocalDateTime date;
     @Column
     String author;

@@ -12,6 +12,7 @@ import java.util.Collection;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Repository
 public interface NewsRepo extends JpaRepository<News, Long> {
+
     @Query("select n from News n order by n.id desc")
     Collection<News>findAllById();
 }
