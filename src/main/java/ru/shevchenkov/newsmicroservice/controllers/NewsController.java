@@ -3,6 +3,8 @@ package ru.shevchenkov.newsmicroservice.controllers;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import ru.shevchenkov.newsmicroservice.model.News;
 import ru.shevchenkov.newsmicroservice.repositories.NewsRepo;
@@ -24,7 +26,7 @@ public class NewsController {
 
     @GetMapping
     public List<News> getAllNews() {
-        return newsRepo.findAll();
+        return (List<News>) newsRepo.findAllById();
     }
 
     @GetMapping("{id}")
